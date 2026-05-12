@@ -5,7 +5,7 @@ def get_stats(ids):
     pairs = collections.defaultdict(int)
     for i, id_ in enumerate(ids):
         if i < len(ids) - 1:
-            pairs[id_, ids[i+1]] += 1
+            pairs[(id_, ids[i+1])] += 1
     return pairs
 
 def merge_tokens(ids, pair, idx):

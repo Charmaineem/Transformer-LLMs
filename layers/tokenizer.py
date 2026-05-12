@@ -18,12 +18,14 @@ class BasicTokenizer:
 
         for i in range(num_merges):
             stats = get_stats(ids)
+            if not stats:
+                break
             pair = max(stats, key=stats.get)
             #print(pair)
             idx = 256 + i
             #print(f'merging {pair} into a new token {idx}')
             ids = merge_tokens(ids,pair, idx)
-            merges[pair] = idx
+            merges[(pair)] = idx
             #print(merges[pair])
             vocab[idx] = vocab[pair[0]] + vocab[pair[1]]
             #print(vocab[idx])
