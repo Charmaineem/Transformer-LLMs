@@ -84,7 +84,7 @@ export default function App(){
       {result && (
         <>
           <TokenizerPanel result={result} />
-          <MergeReplay steps={result.steps} />
+          {/* <MergeReplay steps={result.steps} /> */}
         </>
       )}
     </div>
